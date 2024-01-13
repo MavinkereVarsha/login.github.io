@@ -1,0 +1,110 @@
+
+<!-- Login-1 -->
+
+<!DOCTYPE html>
+<html>
+    
+    <head></head>
+<style> 
+    body{
+        background-color: rgb(26, 1, 49);
+        margin: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100hv;
+    }
+
+    login-container{
+       padding: 20px;
+       border-radius: 8px;
+       box-shadow: 20px;
+       max-width: 400px;
+       width: 500px;
+    }
+    .form-group{
+        margin-bottom: 20px;   
+    }
+    label{
+       color: white;
+        margin-bottom: 8px;
+    }
+    input{
+        width: 100%;
+        padding: 8px;
+        border-radius: 8px;
+        box-sizing: border-box;
+    }
+    button{
+        background-color: rgb(64, 99, 87);
+        color: white;
+        padding: 10px;
+        border: 2px;
+        width: 100px;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+    button:hover{
+        background-color: rgb(24, 39, 34);
+    }
+     
+   
+
+</style>
+
+
+    <body>
+    <div class="login-container">
+        <h2 style="color: white;">Login</h2>
+        <div class="form-group">
+            <label for="username">User Name:</label>
+            <input type="text" id="username" placeholder="enter username">
+            <br>
+        </div>
+        <div class="form-group">
+            <label for="password">Password:</label>
+            <input type="text" id="password" placeholder="enter password">
+        </div>
+        <button onclick="login()">Login</button>
+    </div>
+
+    <script>
+        function login(){
+
+            var username = document.getElementById("username").value;
+            var password = document.getElementById("password").value;
+            
+            if(password.length < 6)
+            alert('password should have more than six charecters');
+
+            else if(!/[A-Z]/.test(password))
+            alert('Password should have UpperCase')
+
+            else if(!/[a-z]/.test(password))
+            alert('Password should have LowerCase')
+
+            else if (!/\d/.test(password)) 
+            alert("Password must contain at least one digit.");
+
+            else if (!/[!@#$%^&*]/.test(password)) 
+            alert("Password must contain at least one special character.");
+
+            else if (/\s/.test(password)) 
+            alert("Password cannot contain spaces.");
+
+            else if (/password|123|qwerty/.test(password)) 
+            alert("Avoid using common words or patterns in your password.");
+
+            else if(password === "")
+            alert("Password should contain values")
+
+            else 
+            window.location.replace('file:///C:/Users/User/Desktop/JSpiders/FrontEnd/Login%20Page/index2.html');
+        }
+    </script>
+
+
+    </body>
+
+
+</html>
